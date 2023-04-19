@@ -18,11 +18,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
+                <Button
+                    android:id="@+id/buttonClear"
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:text="C" />
+            </TableRow>
             <TableLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -120,17 +134,36 @@
                         android:onClick="onClick"
                         android:text="9" />
                 </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/buttonPoint"
+                        style="@style/Widget.AppCompat.Button"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:onClick="onClick"
+                        android:text="Ans" />
+                    <Button
+                        android:id="@+id/button0"
+                        style="@style/Widget.AppCompat.Button"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:onClick="onClick"
+                        android:text="0" />
+
+                    <Button
+                        android:id="@+id/buttonAns"
+                        style="@style/Widget.AppCompat.Button"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:onClick="onClick"
+                        android:text="." />
+                </TableRow>
 
 
             </TableLayout>
-
-            <Button
-                android:id="@+id/button0"
-                style="@style/Widget.AppCompat.Button"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:onClick="onClick"
-                android:text="0" />
         </LinearLayout>
 
         <LinearLayout
@@ -159,14 +192,14 @@
                 android:text="=" />
 
             <Button
-                android:id="@+id/buttonClear"
+                android:id="@+id/buttonMultiply"
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 android:layout_weight="1"
-                android:text="C" />
+                android:text="*" />
         </LinearLayout>
     </LinearLayout>
 
