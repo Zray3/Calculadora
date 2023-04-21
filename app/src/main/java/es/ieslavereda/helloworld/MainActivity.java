@@ -11,6 +11,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView display;
     private Button buttonClear;
     private Button buttonPlus;
+    private  Button buttonMinus;
+    private  Button buttonMultiply;
+    private Button buttonDividir;
     private double operando;
     private Operador operador;
     private Button buttonEquals;
@@ -23,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
         buttonClear = findViewById(R.id.buttonClear);
         buttonPlus = findViewById(R.id.buttonPlus);
         buttonEquals = findViewById(R.id.buttonEquals);
+        buttonMinus = findViewById(R.id.buttonMinus);
+        buttonMultiply = findViewById(R.id.buttonMultiply);
+        buttonDividir = findViewById(R.id.buttonDivide);
 
         buttonClear.setOnClickListener(view -> display.setText("0"));
         buttonPlus.setOnClickListener(view -> {
@@ -31,10 +37,43 @@ public class MainActivity extends AppCompatActivity {
             display.setText("0");
 
         });
+        buttonMinus.setOnClickListener(view -> {
+            operando = Double.parseDouble(display.getText().toString());
+            operador = Operador.RESTA;
+            display.setText("0");
+
+        });
+        buttonMultiply.setOnClickListener(view -> {
+            operando = Double.parseDouble(display.getText().toString());
+            operador = Operador.MULTIPLICACION;
+            display.setText("0");
+
+        });
+        buttonDividir.setOnClickListener(view -> {
+            operando = Double.parseDouble(display.getText().toString());
+            operador = Operador.DIVISION;
+            display.setText("0");
+
+        });
 
         buttonEquals.setOnClickListener(view -> {
             if (operador == Operador.SUMA){
                 Double resultado = operando +
+                        Double.parseDouble(display.getText().toString());
+                display.setText(resultado.toString());
+            }
+            if (operador == Operador.RESTA){
+                Double resultado = operando -
+                        Double.parseDouble(display.getText().toString());
+                display.setText(resultado.toString());
+            }
+            if (operador == Operador.MULTIPLICACION){
+                Double resultado = operando *
+                        Double.parseDouble(display.getText().toString());
+                display.setText(resultado.toString());
+            }
+            if (operador == Operador.DIVISION){
+                Double resultado = operando /
                         Double.parseDouble(display.getText().toString());
                 display.setText(resultado.toString());
             }

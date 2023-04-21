@@ -8,35 +8,22 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="378dp"
+        android:layout_height="451dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
 
-                <Button
-                    android:id="@+id/buttonClear"
-                    style="@style/Widget.AppCompat.Button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_weight="1"
-                    android:text="C" />
-            </TableRow>
             <TableLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -134,17 +121,19 @@
                         android:onClick="onClick"
                         android:text="9" />
                 </TableRow>
+
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <Button
-                        android:id="@+id/buttonPoint"
+                        android:id="@+id/buttonAns"
                         style="@style/Widget.AppCompat.Button"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:onClick="onClick"
                         android:text="Ans" />
+
                     <Button
                         android:id="@+id/button0"
                         style="@style/Widget.AppCompat.Button"
@@ -154,12 +143,37 @@
                         android:text="0" />
 
                     <Button
-                        android:id="@+id/buttonAns"
+                        android:id="@+id/buttonPoint"
                         style="@style/Widget.AppCompat.Button"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:onClick="onClick"
                         android:text="." />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/buttonClear"
+                        style="@style/Widget.AppCompat.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1"
+                        android:text="C" />
+
+                    <Button
+                        android:id="@+id/buttonEquals"
+                        style="@style/Widget.AppCompat.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1"
+                        android:text="=" />
                 </TableRow>
 
 
@@ -182,14 +196,14 @@
                 android:text="+" />
 
             <Button
-                android:id="@+id/buttonEquals"
+                android:id="@+id/buttonMinus"
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 android:layout_weight="1"
-                android:text="=" />
+                android:text="-" />
 
             <Button
                 android:id="@+id/buttonMultiply"
@@ -200,6 +214,16 @@
                 android:layout_marginEnd="5dp"
                 android:layout_weight="1"
                 android:text="*" />
+
+            <Button
+                android:id="@+id/buttonDivide"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:text="/" />
         </LinearLayout>
     </LinearLayout>
 
@@ -209,11 +233,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="40dp"
         android:text="0"
         android:textAlignment="textEnd"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
