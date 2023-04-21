@@ -233,7 +233,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:text="0"
         android:textAlignment="textEnd"
         android:textSize="34sp"
@@ -241,4 +241,65 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/operaciones"
+        android:layout_width="395dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Opciones"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <RadioButton
+            android:id="@+id/division"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="División"
+            android:textColor="#FFFFFF" />
+
+        <RadioButton
+            android:id="@+id/suma"
+            android:layout_width="85dp"
+            android:layout_height="46dp"
+            android:onClick="onClick"
+            android:text="Suma"
+            android:textColor="#FFFFFF" />
+
+        <RadioButton
+            android:id="@+id/multi"
+            android:layout_width="131dp"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Multiplicación"
+            android:textColor="#FFFFFF" />
+
+        <RadioButton
+            android:id="@+id/resta"
+            android:layout_width="96dp"
+            android:layout_height="43dp"
+            android:onClick="onClick"
+            android:text="Resta"
+            android:textColor="#FFFFFF" />
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/Opciones"
+        android:layout_width="258dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="52dp"
+        android:text="Mostrar opciones deshabilitar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.382" />
 </androidx.constraintlayout.widget.ConstraintLayout>
