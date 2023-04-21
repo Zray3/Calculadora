@@ -14,9 +14,10 @@ public class MainActivity extends AppCompatActivity {
     private  Button buttonMinus;
     private  Button buttonMultiply;
     private Button buttonDividir;
+    private Button buttonEquals;
     private double operando;
     private Operador operador;
-    private Button buttonEquals;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
