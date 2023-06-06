@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private TextView display;
-    private Button buttonClear, buttonPlus, buttonMinus, buttonMultiply, buttonDividir,buttonEquals,buttonAns;
+    private Button buttonClear, buttonPlus, buttonMinus, buttonMultiply, buttonDividir,buttonEquals,buttonAns, buttonPoint;
     private CheckBox opciones;
     private RadioButton division, multi, suma, resta;
     private double ans;
@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private double operando;
     private Operador operador;
     private boolean checkedCB=false;
+    private boolean comma=false;
 
     private boolean[] checkedArr = new boolean[4];
 
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         resta=findViewById(R.id.resta);
         division=findViewById(R.id.division);
         multi=findViewById(R.id.multi);
+        buttonPoint=findViewById(R.id.buttonPoint);
         radioGroup=findViewById(R.id.operaciones);
 
         buttonClear.setOnClickListener(view -> display.setText("0"));
@@ -51,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
             if (checkedArr[0]==false){
             operando = Double.parseDouble(display.getText().toString());
             operador = Operador.SUMA;
-            display.setText("0");}
+            display.setText("0");
+                comma=false;}
 
         });
         buttonMinus.setOnClickListener(view -> {
@@ -59,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
             operando = Double.parseDouble(display.getText().toString());
             operador = Operador.RESTA;
             display.setText("0");
+                comma=false;
             }
 
         });
@@ -67,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 operando = Double.parseDouble(display.getText().toString());
                 operador = Operador.MULTIPLICACION;
                 display.setText("0");
+                comma=false;
             }
 
         });
@@ -75,13 +80,21 @@ public class MainActivity extends AppCompatActivity {
             operando = Double.parseDouble(display.getText().toString());
             operador = Operador.DIVISION;
             display.setText("0");
+                comma=false;
             }
 
         });
 
         buttonAns.setOnClickListener(view -> {
            display.setText(String.valueOf(ans));
+            comma=false;
+        });
 
+        buttonPoint.setOnClickListener(view -> {
+            if (comma==false){
+                display.setText(display.getText().toString()+".");
+                comma=true;
+            }
         });
 
         buttonEquals.setOnClickListener(view -> {
