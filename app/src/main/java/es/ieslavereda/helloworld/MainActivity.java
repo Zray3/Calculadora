@@ -98,24 +98,33 @@ public class MainActivity extends AppCompatActivity {
         });
 
         buttonEquals.setOnClickListener(view -> {
+            Double resultado=0.0;
             if (operador == Operador.SUMA){
-                Double resultado = operando +
+                resultado = operando +
                         Double.parseDouble(display.getText().toString());
-                display.setText(resultado.toString());
             }
             if (operador == Operador.RESTA){
-                Double resultado = operando -
+                 resultado = operando -
                         Double.parseDouble(display.getText().toString());
-                display.setText(resultado.toString());
+
             }
             if (operador == Operador.MULTIPLICACION){
-                Double resultado = operando *
+                resultado = operando *
                         Double.parseDouble(display.getText().toString());
-                display.setText(resultado.toString());
+
             }
             if (operador == Operador.DIVISION){
-                Double resultado = operando /
+
+                 resultado = operando /
                         Double.parseDouble(display.getText().toString());
+
+            }
+
+            if (resultado == Math.floor(resultado)) {
+                int resultadoInt = resultado.intValue();
+                display.setText(resultadoInt+"");
+                comma=false;
+            } else {
                 display.setText(resultado.toString());
             }
             ans=Double.parseDouble(display.getText().toString());
